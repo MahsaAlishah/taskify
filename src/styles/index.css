@@ -1,0 +1,218 @@
+@import url("/fonts.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand */
+    --color-brand: 79, 70, 229;
+    --color-brand-light: 99, 102, 241;
+    --color-brand-dark: 67, 56, 202;
+
+    /* Text */
+    --color-text-primary: 30, 41, 59; /* slate-800 */
+    --color-text-secondary: 71, 85, 105; /* slate-600 */
+    --color-text-tertiary: 100, 116, 139; /*slate-500*/
+    --color-text-muted: 148, 163, 184; /* slate-400 */
+
+    /* Backgrounds */
+    --color-bg-body: 226, 232, 240; /* slate-100 */
+    --color-bg-card: 255, 255, 255;
+    --color-bg-card-alt: 248, 250, 252;
+
+    /* Borders */
+    --color-border: 226, 232, 240;
+    --color-border-dark: 203, 213, 225;
+
+    /* Task Status Colors */
+    --color-todo: 14, 165, 233;
+    --color-todo-bg: 224, 242, 254;
+
+    --color-inprogress: 245, 158, 11;
+    --color-inprogress-bg: 254, 243, 199;
+
+    --color-completed: 34, 197, 94;
+    --color-completed-bg: 220, 252, 231;
+
+    /* Alerts */
+    --color-danger: 220, 38, 38;
+    --color-danger-light: 254, 226, 226;
+
+    --color-success: 22, 163, 74;
+    --color-success-light: 220, 252, 231;
+
+    --color-warning: 245, 158, 11;
+    --color-warning-light: 254, 243, 199;
+
+    /* Primary Button - Light */
+    --color-btn-primary: 79, 70, 229;
+    --color-btn-primary-hover: 67, 56, 202;
+    --color-btn-primary-active: 55, 48, 163;
+    --color-btn-primary-text: 255, 255, 255;
+
+    /* Success Button - Light */
+    --color-btn-success: 34, 197, 94;
+    --color-btn-success-hover: 22, 163, 74;
+    --color-btn-success-active: 21, 128, 61;
+    --color-btn-success-text: 255, 255, 255;
+
+    /* Input Colors */
+    --color-input-bg: 255, 255, 255;
+    --color-input-bg-dark: 30, 41, 59;
+
+    --color-input-border: 203, 213, 225; /* slate-300 */
+    --color-input-border-hover: 148, 163, 184; /* slate-400 */
+    --color-input-border-focus: 71, 64, 211; /* یا هرچی بخوای */
+    --color-input-ring: 71, 64, 211; /* رنگ رینگ focus */
+    --color-input-text: 30, 41, 59; /* slate-800 */
+  }
+
+  /* DARK MODE */
+  .dark {
+    /* Brand */
+    --color-brand: 99, 102, 241;
+    --color-brand-light: 129, 140, 248;
+    --color-brand-dark: 79, 70, 229;
+
+    /* Text */
+    --color-text-primary: 248, 250, 252;
+    --color-text-secondary: 203, 213, 225;
+    --color-text-tertiary: 100, 116, 139;
+    --color-text-muted: 148, 163, 184;
+
+    /* Backgrounds */
+    --color-bg-body: 15, 23, 42;
+    --color-bg-card: 30, 41, 59;
+    --color-bg-card-alt: 51, 65, 85;
+
+    /* Borders */
+    --color-border: 71, 85, 105;
+    --color-border-dark: 100, 116, 139;
+
+    /* Task Status Colors (dark-friendly variants) */
+    --color-todo: 56, 189, 248;
+    --color-todo-bg: 12, 74, 110;
+
+    --color-inprogress: 251, 191, 36;
+    --color-inprogress-bg: 120, 53, 15;
+
+    --color-completed: 74, 222, 128;
+    --color-completed-bg: 20, 83, 45;
+
+    /* Alerts */
+    --color-danger: 248, 113, 113;
+    --color-danger-light: 127, 29, 29;
+
+    --color-success: 74, 222, 128;
+    --color-success-light: 20, 83, 45;
+
+    --color-warning: 251, 191, 36;
+    --color-warning-light: 120, 53, 15;
+
+    /* Primary Button - Dark */
+    --color-btn-primary: 99, 102, 241;
+    --color-btn-primary-hover: 129, 140, 248;
+    --color-btn-primary-active: 79, 70, 229;
+    --color-btn-primary-text: 255, 255, 255;
+
+    /* Success Button - Dark */
+    --color-btn-success: 74, 222, 128;
+    --color-btn-success-hover: 34, 197, 94;
+    --color-btn-success-active: 21, 128, 61;
+    --color-btn-success-text: 15, 23, 42;
+
+    /* input - Dark */
+    --color-input-bg: 30, 41, 59;
+    --color-input-border: 71, 85, 105;
+    --color-input-border-hover: 100, 116, 139;
+    --color-input-border-focus: 71, 64, 211;
+    --color-input-ring: 71, 64, 211;
+    --color-input-text: 248, 250, 252;
+  }
+}
+
+@layer components {
+  .textField__input {
+    @apply w-full px-3 py-2 rounded-lg text-input-text bg-input border border-input-border shadow-sm hover:shadow-md focus:shadow-lg focus:border-input-border-focus transition-all duration-200;
+  }
+
+  .card {
+    @apply w-full rounded-xl bg-bg-card shadow-lg hover:shadow-[0_6px_28px_rgba(0,0,0,0.12)] focus:shadow-[0_8px_32px_rgba(0,0,0,0.16)] transition-all duration-300;
+  }
+
+  .btn {
+    @apply px-3 py-1 rounded-lg transition-all duration-300;
+  }
+  .btn--primary {
+    @apply px-4 py-3 bg-btn-primary text-btn-primary-text hover:bg-btn-primary-hover shadow-lg shadow-slate-300 dark:shadow-slate-200 text-sm;
+  }
+  .btn--secondary {
+    @apply bg-secondary-600 text-secondary-100;
+  }
+  .btn--outline {
+    @apply border border-secondary-700 text-secondary-700;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--vazir-font);
+  min-height: 100vh;
+  user-select: none;
+  background-color: rgb(var(--color-bg-body));
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* border: none; */
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+/* button:disabled {
+  cursor: default;
+  background-color: rgb(var(--color-secondary-100), 0.5);
+  pointer-events: none;
+  box-shadow: none;
+} */
+
+/* TABLE */
+
+/* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table .title-row {
+  background-color: rgb(var(--color-secondary-100));
+}
+
+table td,
+table th {
+  border-bottom: 1px solid rgb(var(--color-secondary-200));
+  text-align: right;
+  white-space: nowrap;
+}
+
+table th {
+  padding: 0.6rem 1rem;
+  color: rgb(var(--color-secondary-600));
+  font-size: 0.9rem;
+}
+
+table td {
+  font-size: 0.85rem;
+  padding: 1rem 1rem;
+  color: rgb(var(--color-secondary-600));
+} */
