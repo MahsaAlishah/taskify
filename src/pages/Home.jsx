@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import TaskQuickAdd from "../features/tasks/components/TaskQuickAdd";
 import TasksList from "../features/tasks/components/TasksList";
-import toast from "react-hot-toast";
+import initializeTasks, {
+  tasksReducer,
+} from "../features/tasks/reducer/tasksReducer";
 
 function Home() {
-  const [tasks, setTasks] = useState(() => {
-    try {
-      const storedTasks = localStorage.getItem("tasks");
-      return storedTasks ? JSON.parse(storedTasks) : [];
-    } catch (error) {
-      toast.error("Error reading from localStorage:", error);
-      return [];
-    }
-  });
+  const [tasks, dispatch] = useReducer(tasksReducer, [], initializeTasks);
 
   useEffect(() => {
     try {
@@ -22,27 +16,21 @@ function Home() {
     }
   }, [tasks]);
 
-  const addNewTask = (taskText) => {
-    setTasks((prev) => [
-      ...prev,
-      { id: Date.now(), text: taskText, done: false },
-    ]);
-  };
-
-  const toggleTask = (taskId) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === taskId ? { ...task, done: !task.done } : task,
-      ),
-    );
-  };
-
   return (
     <div className="flex flex-col items-center">
       <div className="w-full max-w-xl space-y-4">
-        <TaskQuickAdd onAddTask={addNewTask} />
+        <TaskQuickAdd
+          onAddTask={(taskText) =>
+            dispatch({ type: "ADD_TASK", payload: taskText })
+          }
+        />
         <hr className="w-full border-t border-gray-400 my-7" />
-        <TasksList tasks={tasks} onToggleTask={toggleTask} />
+        <TasksList
+          tasks={tasks}
+          onToggleTask={(taskId) =>
+            dispatch({ type: "TOGGLE_TASK", payload: taskId })
+          }
+        />
       </div>
     </div>
   );
