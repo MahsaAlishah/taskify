@@ -4,10 +4,11 @@ import Home from "./pages/Home";
 import Tasks from "./pages/Tasks";
 import Dashboard from "./pages/dashboard";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <Toaster position="top-center" />
       <Routes>
         <Route element={<Layout />}>
@@ -16,7 +17,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }
 

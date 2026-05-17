@@ -69,7 +69,7 @@
   }
 
   /* DARK MODE */
-  .dark {
+  html.dark {
     /* Brand */
     --color-brand: 99, 102, 241;
     --color-brand-light: 129, 140, 248;

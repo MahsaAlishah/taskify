@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import ThemeToggle from "../ui/ThemeToggle";
 
 function Navbar() {
   const base = "text-sm font-medium transition-colors hover:text-brand";
