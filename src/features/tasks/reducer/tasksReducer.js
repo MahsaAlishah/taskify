@@ -25,7 +25,8 @@ export default function initializeTasks() {
     const storedTasks = localStorage.getItem("tasks");
     return storedTasks ? JSON.parse(storedTasks) : [];
   } catch (error) {
-    toast.error("Error reading from localStorage:", error);
+    toast.error("Error reading from localStorage:");
+    console.error(error);
     return [];
   }
 }

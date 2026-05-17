@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import TasksContext from "../context/TasksContext";
 
-function TaskQuickAdd({ onAddTask }) {
+function TaskQuickAdd() {
+  const {dispatch}=useContext(TasksContext)
   const [text, setText] = useState("");
 
   const handleChange = (e) => {
@@ -10,12 +12,17 @@ function TaskQuickAdd({ onAddTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!text.trim()){
-      toast.error("field is empty");
+      toast.error("Task title cannot be empty");
       return;
     }
 
-    onAddTask(text);
+    dispatch({
+      type: "ADD_TASK",
+      payload: text,
+    });
+
     setText("");
   };
 
