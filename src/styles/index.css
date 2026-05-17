@@ -76,14 +76,14 @@
     --color-brand-dark: 79, 70, 229;
 
     /* Text */
-    --color-text-primary: 248, 250, 252;
-    --color-text-secondary: 203, 213, 225;
-    --color-text-tertiary: 100, 116, 139;
-    --color-text-muted: 148, 163, 184;
+    --color-text-primary: 230, 233, 240;
+    --color-text-secondary: 180, 190, 200; 
+    --color-text-tertiary: 135, 145, 155;
+    --color-text-muted: 210, 214, 220;
 
     /* Backgrounds */
-    --color-bg-body: 15, 23, 42;
-    --color-bg-card: 30, 41, 59;
+    --color-bg-body: 17, 23, 41;
+    --color-bg-card: 36, 51, 71;
     --color-bg-card-alt: 51, 65, 85;
 
     /* Borders */
@@ -91,14 +91,14 @@
     --color-border-dark: 100, 116, 139;
 
     /* Task Status Colors (dark-friendly variants) */
-    --color-todo: 56, 189, 248;
+    --color-todo: 20, 97, 152;
     --color-todo-bg: 12, 74, 110;
 
     --color-inprogress: 251, 191, 36;
-    --color-inprogress-bg: 120, 53, 15;
+    --color-inprogress-bg: 133, 77, 23;
 
     --color-completed: 74, 222, 128;
-    --color-completed-bg: 20, 83, 45;
+    --color-completed-bg: 29, 101, 60;
 
     /* Alerts */
     --color-danger: 248, 113, 113;
@@ -111,9 +111,9 @@
     --color-warning-light: 120, 53, 15;
 
     /* Primary Button - Dark */
-    --color-btn-primary: 99, 102, 241;
-    --color-btn-primary-hover: 129, 140, 248;
-    --color-btn-primary-active: 79, 70, 229;
+    --color-btn-primary:  79, 70, 229;
+    --color-btn-primary-hover: 67, 56, 202;
+    --color-btn-primary-active: 55, 48, 163;
     --color-btn-primary-text: 255, 255, 255;
 
     /* Success Button - Dark */
@@ -145,7 +145,7 @@
     @apply px-3 py-1 rounded-lg transition-all duration-300;
   }
   .btn--primary {
-    @apply px-4 py-3 bg-btn-primary text-btn-primary-text hover:bg-btn-primary-hover shadow-lg shadow-slate-300 dark:shadow-slate-200 text-sm;
+    @apply px-4 py-3 bg-btn-primary text-btn-primary-text hover:bg-btn-primary-hover shadow-lg dark:shadow-none shadow-slate-300 dark:shadow-slate-200 text-sm;
   }
   .btn--secondary {
     @apply bg-secondary-600 text-secondary-100;

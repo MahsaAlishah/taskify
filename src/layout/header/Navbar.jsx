@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import ThemeToggle from "../ui/ThemeToggle";
 
 function Navbar() {
-  const base = "text-sm font-medium transition-colors hover:text-brand";
-  const active = "text-brand";
-  const inactive = "text-muted-foreground";
+  const base = "text-sm font-medium transition-colors";
+  const active = "text-brand-light dark:text-text-primary";
+  const inactive = "text-text-secondary hover:text-text-primary";
 
   return (
     <nav className="flex items-center gap-10">
