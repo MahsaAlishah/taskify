@@ -17,7 +17,7 @@ export default {
     extend: {
       colors: {
         // ===== Brand =====
-        "brand": withOpacity("--color-brand"),
+        brand: withOpacity("--color-brand"),
         "brand-light": withOpacity("--color-brand-light"),
         "brand-dark": withOpacity("--color-brand-dark"),
 
@@ -33,27 +33,27 @@ export default {
         "bg-card-alt": withOpacity("--color-bg-card-alt"),
 
         // ===== Borders =====
-        "border": withOpacity("--color-border"),
+        border: withOpacity("--color-border"),
         "border-dark": withOpacity("--color-border-dark"),
 
         // ===== Task Status =====
-        "todo": withOpacity("--color-todo"),
+        todo: withOpacity("--color-todo"),
         "todo-bg": withOpacity("--color-todo-bg"),
 
-        "inprogress": withOpacity("--color-inprogress"),
+        inprogress: withOpacity("--color-inprogress"),
         "inprogress-bg": withOpacity("--color-inprogress-bg"),
 
-        "completed": withOpacity("--color-completed"),
+        completed: withOpacity("--color-completed"),
         "completed-bg": withOpacity("--color-completed-bg"),
 
         // ===== Alerts =====
-        "danger": withOpacity("--color-danger"),
+        danger: withOpacity("--color-danger"),
         "danger-light": withOpacity("--color-danger-light"),
 
-        "success": withOpacity("--color-success"),
+        success: withOpacity("--color-success"),
         "success-light": withOpacity("--color-success-light"),
 
-        "warning": withOpacity("--color-warning"),
+        warning: withOpacity("--color-warning"),
         "warning-light": withOpacity("--color-warning-light"),
 
         // ===== Buttons =====
@@ -62,12 +62,17 @@ export default {
         "btn-primary-active": withOpacity("--color-btn-primary-active"),
         "btn-primary-text": withOpacity("--color-btn-primary-text"),
 
+        "btn-secondary": withOpacity("--color-btn-secondary"),
+        "btn-secondary-hover": withOpacity("--color-btn-secondary-hover"),
+        "btn-secondary-active": withOpacity("--color-btn-secondary-active"),
+        "btn-secondary-text": withOpacity("--color-btn-secondary-text"),
+
         "btn-success": withOpacity("--color-btn-success"),
         "btn-success-hover": withOpacity("--color-btn-success-hover"),
         "btn-success-active": withOpacity("--color-btn-success-active"),
         "btn-success-text": withOpacity("--color-btn-success-text"),
 
-        "input": withOpacity("--color-input-bg"),
+        input: withOpacity("--color-input-bg"),
         "input-border": withOpacity("--color-input-border"),
         "input-border-hover": withOpacity("--color-input-border-hover"),
         "input-border-focus": withOpacity("--color-input-border-focus"),

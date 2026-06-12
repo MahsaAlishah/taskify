@@ -1,17 +1,35 @@
-import { Children, createContext, useEffect, useReducer } from "react";
-import initializeTasks, { tasksReducer } from "../reducer/tasksReducer";
+import { createContext, useEffect, useMemo, useReducer } from "react";
+import initializeTasks, { initialState, tasksReducer } from "../reducer/tasksReducer";
 
 const TasksContext = createContext();
 
 export function TasksProvider({ children }) {
-  const [tasks, dispatch] = useReducer(tasksReducer, [], initializeTasks);
+  const [state, dispatch] = useReducer(tasksReducer, initialState, initializeTasks);
+
+  const { tasks, filter } = state;
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  const filteredTasks = useMemo(() => {
+    if (filter === "active") return tasks.filter((t) => !t.done);
+    if (filter === "completed") return tasks.filter((t) => t.done);
+    return tasks;
+  }, [tasks, filter]);
+
+  const stats = useMemo(() => {
+    const total = tasks.length;
+    const active = tasks.filter((t) => !t.done).length;
+    const completed = total - active;
+
+    return { total, active, completed };
+  }, [tasks]);
+
   return (
-    <TasksContext.Provider value={{ tasks, dispatch }}>
+    <TasksContext.Provider
+      value={{ tasks, filteredTasks, filter, stats, dispatch }}
+    >
       {children}
     </TasksContext.Provider>
   );
