@@ -20,6 +20,12 @@ export function tasksReducer(state, action) {
         ],
       };
 
+    case "SET_FILTER":
+      return {
+        ...state,
+        filter: action.payload,
+      };
+
     case "TOGGLE_TASK":
       return {
         ...state,
@@ -28,10 +34,14 @@ export function tasksReducer(state, action) {
         ),
       };
 
-    case "SET_FILTER":
+    case "UPDATE_TASK":
       return {
         ...state,
-        filter: action.payload,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id
+            ? { ...task, text: action.payload.text }
+            : task,
+        ),
       };
 
     default:
