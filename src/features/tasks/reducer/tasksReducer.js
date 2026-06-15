@@ -20,6 +20,12 @@ export function tasksReducer(state, action) {
         ],
       };
 
+    case "DELETE_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== action.payload),
+      };
+
     case "SET_FILTER":
       return {
         ...state,
