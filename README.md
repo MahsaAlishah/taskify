@@ -76,6 +76,4 @@ src/
 - **Routing**: Implemented protected layout structure using `react-router-dom` and `Outlet`.
 
 ---
-*"Implemented a centralized state management system using **React Context API and useReducer** to handle complex application logic, eliminating the need for external state management libraries."* 
-
-این جمله نشان می‌دهد که شما معماری React را به خوبی درک کرده‌اید و بیهوده از کتابخانه‌های سنگین استفاده نمی‌کنید.
+*"Implemented a centralized state management system using **React Context API and useReducer** to handle complex application logic, eliminating the need for external state management libraries."*
